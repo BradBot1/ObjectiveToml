@@ -103,7 +103,7 @@ public final class TomlObject implements ITomlElement, Iterable<String> {
 	public final @NotNull String toString() {
 		@NotNull final StringBuilder asString = new StringBuilder("TomlObject{elementMap=");
 		for (@NotNull final Entry<String, ITomlElement> entry : this.elementMap.entrySet()) {
-			asString.append(entry.getKey()).append(',').append(entry.getValue().toString()).append(',');
+			asString.append('[').append(entry.getKey()).append(':').append(entry.getValue().toString()).append("],");
 		}
 		final String compiled = asString.toString();
 		return compiled.substring(0, compiled.length() - 1) + '}';
