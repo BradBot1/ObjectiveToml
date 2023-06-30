@@ -12,6 +12,8 @@ import org.tomlj.TomlParseError;
 import org.tomlj.TomlParseResult;
 import org.tomlj.TomlTable;
 
+import fun.bb1.toml.tomj.TomlJ;
+
 public final class Toml {
 	
 	private Toml() { }
@@ -62,7 +64,7 @@ public final class Toml {
 	}
 	
 	private static final @Nullable Object recurse(@NotNull final ITomlElement toml) {
-		return new TomlJBuilder().recurse(toml);
+		return TomlJ.recurse(toml);
 	}
 	
 }
