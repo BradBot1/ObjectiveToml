@@ -50,7 +50,7 @@ public final class TomlArray implements ITomlElement, Iterable<ITomlElement> {
 	
 	@Override
 	public String toString() {
-		return "TomlArray{elementList=[" + String.join(",", this.elementList.stream().map(ITomlElement::toString).collect(LinkedList::new, LinkedList::add, LinkedList::addAll)) + "]}";
+		return "TomlArray{elementList=[" + this.elementList.stream().map(ITomlElement::toString).collect(StringBuilder::new, (sb,e)->sb.append(e.toString()).append(','), StringBuilder::append) + "]}";
 	}
 	
 	@Override
