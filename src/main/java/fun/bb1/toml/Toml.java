@@ -16,7 +16,7 @@ public final class Toml {
 	
 	private Toml() { }
 	
-	public static final @NotNull Object parseString(@NotNull final String tomlString) {
+	public static final @NotNull ITomlElement parseString(@NotNull final String tomlString) {
 		TomlParseResult result = org.tomlj.Toml.parse(tomlString);
 		if (result.hasErrors()) {
 			System.err.println("While parsing a toml document [" + result.errors().size() + "] error(s) where found!");
